@@ -1,0 +1,11 @@
+Model Information:
+* title:	Tennis Racket Wilson Blade
+* source:	https://sketchfab.com/3d-models/tennis-racket-wilson-blade-599589f98217465f960310104b7aa474
+* author:	Vladislav3000111 (https://sketchfab.com/Vladislav3000111)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Tennis Racket Wilson Blade" (https://sketchfab.com/3d-models/tennis-racket-wilson-blade-599589f98217465f960310104b7aa474) by Vladislav3000111 (https://sketchfab.com/Vladislav3000111) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
