@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative z-10 border-t border-glass-border py-12 px-8">
+    <footer id="footer" className="relative z-10 border-t border-glass-border py-12 px-8">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="font-heading text-xl tracking-wider uppercase">
           <span className="text-accent">W</span>ilson
