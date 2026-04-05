@@ -1,27 +1,31 @@
 const rackets = [
   {
-    name: 'Blade 98',
-    weight: '305g',
-    balance: '32.5cm',
-    tagline: 'The benchmark for control.',
+    name: 'Blade 100',
+    weight: '300g',
+    balance: '32 cm',
+    tagline: 'The Feel Racket.',
+    image: '/images/racket_blade100.webp',
   },
   {
-    name: 'Pro Staff 97',
-    weight: '315g',
-    balance: '31.0cm',
+    name: 'Pro Staff One',
+    weight: '331g',
+    balance: '30.5cm',
     tagline: 'Precision in every swing.',
+    image: '/images/racket_one95.webp',
   },
   {
     name: 'Ultra 100',
     weight: '300g',
     balance: '33.0cm',
     tagline: 'Power without compromise.',
+    image: '/images/racket_ultra100.webp',
   },
   {
-    name: 'Clash 100',
-    weight: '295g',
-    balance: '33.5cm',
+    name: 'Intrigue Sakura',
+    weight: '264g',
+    balance: '33cm',
     tagline: 'Flex meets stability.',
+    image: '/images/racket_sakura.webp',
   },
 ]
 
@@ -44,8 +48,12 @@ export default function Collection() {
             key={racket.name}
             className="group bg-glass backdrop-blur-md border border-glass-border rounded-lg p-6 text-center hover:border-accent/40 transition-all"
           >
-            <div className="h-48 flex items-center justify-center mb-6 rounded bg-bg/50">
-              <span className="text-secondary text-xs font-mono">3D Model</span>
+            <div className="h-48 flex items-center justify-center mb-6 rounded bg-bg/50 overflow-hidden">
+              <img
+                src={racket.image}
+                alt={racket.name}
+                className="h-full w-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
             <h3 className="text-xl font-heading mb-1">{racket.name}</h3>
             <p className="text-muted text-sm font-sub mb-4">{racket.tagline}</p>
