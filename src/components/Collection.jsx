@@ -4,28 +4,32 @@ const rackets = [
     weight: '300g',
     balance: '32 cm',
     tagline: 'The Feel Racket.',
-    image: '/images/racket_blade100.webp',
+    imageBefore: '/images/racket_blade100_before.webp',
+    imageAfter: '/images/racket_blade100_after.webp',
   },
   {
     name: 'Pro Staff One',
     weight: '331g',
     balance: '30.5cm',
     tagline: 'Precision in every swing.',
-    image: '/images/racket_one95.webp',
+    imageBefore: '/images/racket_one95_before.webp',
+    imageAfter: '/images/racket_one95_after.webp',
   },
   {
     name: 'Ultra 100',
     weight: '300g',
     balance: '33.0cm',
     tagline: 'Power without compromise.',
-    image: '/images/racket_ultra100.webp',
+    imageBefore: '/images/racket_ultra100_before.webp',
+    imageAfter: '/images/racket_ultra100_after.webp',
   },
   {
     name: 'Intrigue Sakura',
     weight: '264g',
     balance: '33cm',
     tagline: 'Flex meets stability.',
-    image: '/images/racket_sakura.webp',
+    imageBefore: '/images/racket_sakura_before.webp',
+    imageAfter: '/images/racket_sakura_after.webp',
   },
 ]
 
@@ -46,25 +50,37 @@ export default function Collection() {
         {rackets.map((racket) => (
           <div
             key={racket.name}
-            className="group bg-glass backdrop-blur-md border border-glass-border rounded-lg p-6 text-center hover:border-accent/40 transition-all"
+            className="group relative bg-glass backdrop-blur-md border border-glass-border rounded-lg overflow-hidden text-center hover:border-accent/40 transition-all"
           >
-            <div className="h-48 flex items-center justify-center mb-6 rounded bg-bg/50 overflow-hidden">
-              <img
-                src={racket.image}
-                alt={racket.name}
-                className="h-full w-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-              />
+            <img
+              src={racket.imageBefore}
+              alt={racket.name}
+              className="absolute bottom-0 left-0 right-0 z-0 w-full h-3/5 object-contain object-bottom transition-all duration-500 ease-out opacity-100 group-hover:opacity-0"
+            />
+
+            <img
+              src={racket.imageAfter}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 z-0 w-full h-full object-contain p-2 scale-110 opacity-0 transition-all duration-500 ease-out group-hover:object-cover group-hover:p-0 group-hover:scale-125 group-hover:opacity-40"
+            />
+
+            <div className="absolute inset-0 z-10 bg-linear-to-t from-bg via-bg/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+            <div className="relative z-20 h-full flex flex-col p-6">
+              <h3 className="text-xl font-heading mb-1">{racket.name}</h3>
+              <p className="text-muted text-sm font-sub mb-2">{racket.tagline}</p>
+              <div className="flex justify-center gap-4 text-xs font-mono text-secondary">
+                <span>{racket.weight}</span>
+                <span className="text-accent">|</span>
+                <span>{racket.balance}</span>
+              </div>
+              <div className="mt-auto pt-48">
+                <button className="w-full py-2 border border-secondary text-muted text-sm font-mono rounded group-hover:border-accent group-hover:text-accent transition-colors">
+                  View Details
+                </button>
+              </div>
             </div>
-            <h3 className="text-xl font-heading mb-1">{racket.name}</h3>
-            <p className="text-muted text-sm font-sub mb-4">{racket.tagline}</p>
-            <div className="flex justify-center gap-4 text-xs font-mono text-secondary">
-              <span>{racket.weight}</span>
-              <span className="text-accent">|</span>
-              <span>{racket.balance}</span>
-            </div>
-            <button className="mt-6 w-full py-2 border border-secondary text-muted text-sm font-mono rounded group-hover:border-accent group-hover:text-accent transition-colors">
-              View Details
-            </button>
           </div>
         ))}
       </div>
