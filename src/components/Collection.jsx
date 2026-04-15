@@ -33,6 +33,8 @@ const rackets = [
   },
 ]
 
+const SLANT = 'polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%)'
+
 export default function Collection() {
   return (
     <section
@@ -46,41 +48,58 @@ export default function Collection() {
         Choose Your <span className="text-accent">Weapon</span>
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl w-full">
         {rackets.map((racket) => (
           <div
             key={racket.name}
-            className="group relative bg-glass backdrop-blur-md border border-glass-border rounded-lg overflow-hidden text-center hover:border-accent/40 transition-all"
+            className="group relative flex flex-row h-44 rounded-lg overflow-hidden border border-glass-border hover:border-accent/50 transition-all duration-300 cursor-pointer"
           >
-            <img
-              src={racket.imageBefore}
-              alt={racket.name}
-              className="absolute bottom-0 left-0 right-0 z-0 w-full h-3/5 object-contain object-bottom transition-all duration-500 ease-out opacity-100 group-hover:opacity-0"
-            />
 
-            <img
-              src={racket.imageAfter}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 z-0 w-full h-full object-contain p-2 scale-110 opacity-0 transition-all duration-500 ease-out group-hover:object-cover group-hover:p-0 group-hover:scale-125 group-hover:opacity-40"
-            />
+            {/*Left panel*/}
+            <div className="relative w-2/5 flex items-center justify-center shrink-0 overflow-hidden">
+              <img
+                src={racket.imageBefore}
+                alt={racket.name}
+                className="absolute inset-0 w-full h-full object-contain p-3 transition-all duration-500 ease-out opacity-100 group-hover:opacity-0 group-hover:scale-110"
+              />
+              <img
+                src={racket.imageAfter}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-contain p-3 scale-105 opacity-0 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-110"
+              />
+            </div>
 
-            <div className="absolute inset-0 z-10 bg-linear-to-t from-bg via-bg/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            {/*Right panel*/}
+            <div className="relative flex-1 flex items-center">
+              <div
+                className="absolute inset-0 bg-accent transition-all duration-300 group-hover:brightness-110"
+                style={{ clipPath: SLANT }}
+              />
 
-            <div className="relative z-20 h-full flex flex-col p-6">
-              <h3 className="text-xl font-heading mb-1">{racket.name}</h3>
-              <p className="text-muted text-sm font-sub mb-2">{racket.tagline}</p>
-              <div className="flex justify-center gap-4 text-xs font-mono text-secondary">
-                <span>{racket.weight}</span>
-                <span className="text-accent">|</span>
-                <span>{racket.balance}</span>
-              </div>
-              <div className="mt-auto pt-48">
-                <button className="w-full py-2 border border-secondary text-muted text-sm font-mono rounded group-hover:border-accent group-hover:text-accent transition-colors">
+              <div className="relative z-10 pl-12 pr-6 py-4 flex flex-col justify-between h-full">
+                <div>
+                  <h3 className="text-2xl font-heading text-bg leading-tight mb-0.5">
+                    {racket.name}
+                  </h3>
+                  <p className="text-bg/70 text-sm font-sub">{racket.tagline}</p>
+                </div>
+
+                <div className="flex items-center gap-3 text-sm font-mono text-bg/80 mt-2">
+                  <span>{racket.weight}</span>
+                  <span className="text-bg/40">|</span>
+                  <span>{racket.balance}</span>
+                </div>
+
+                <button className="mt-2 self-start text-xs font-mono text-bg/60 hover:text-bg flex items-center gap-1 transition-colors">
                   View Details
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </button>
               </div>
             </div>
+
           </div>
         ))}
       </div>
