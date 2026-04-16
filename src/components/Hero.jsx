@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
-export default function Hero() {
+export default function Hero({ canPlay = false }) {
   const sectionRef = useRef()
   const labelRef = useRef()
   const line1Ref = useRef()
@@ -12,6 +12,22 @@ export default function Hero() {
   const shapesRef = useRef()
 
   useGSAP(() => {
+    const animated = [
+      ...Array.from(shapesRef.current.children),
+      labelRef.current,
+      line1Ref.current,
+      line2Ref.current,
+      subRef.current,
+      btnsRef.current,
+    ]
+
+    if (!canPlay) {
+      gsap.set(animated, { opacity: 0 })
+      return
+    }
+
+    gsap.set(animated, { clearProps: 'all' })
+
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
     tl.from(shapesRef.current.children, {
@@ -33,7 +49,7 @@ export default function Hero() {
 
     tl.from(subRef.current, { opacity: 0, y: 24, duration: 0.7 }, 0.95)
     tl.from(btnsRef.current, { opacity: 0, y: 20, duration: 0.6 }, 1.1)
-  }, { scope: sectionRef })
+  }, { scope: sectionRef, dependencies: [canPlay] })
 
   return (
     <section
