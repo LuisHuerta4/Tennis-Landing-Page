@@ -2,6 +2,8 @@ import { useState } from 'react'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import Collection from './components/Collection'
+import Technology from './components/Technology'
+import Ticker from './components/Ticker'
 import Footer from './components/Footer'
 import RacketScene from './components/RacketScene'
 import ScrollAnimationManager from './components/ScrollAnimationManager'
@@ -28,6 +30,8 @@ function App() {
       <Navbar />
       <Hero canPlay={heroCanPlay} />
       <Features />
+      <Ticker />
+      <Technology />
       <Collection />
       <Footer />
     </main>
