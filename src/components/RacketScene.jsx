@@ -1,9 +1,10 @@
-import { Suspense, useRef } from 'react'
+import { Suspense, useRef, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useGLTF, Environment } from '@react-three/drei'
 import * as THREE from 'three'
 import { RACKET_KEYFRAMES } from '../lib/racketKeyframes'
 import { scrollStore } from '../lib/scrollStore'
+import { loadStore } from '../lib/loadStore'
 
 const MODEL_PATH = '/models/tennis_racket_wilson_blade/scene.gltf'
 
@@ -11,6 +12,11 @@ function RacketModel() {
   const { scene } = useGLTF(MODEL_PATH)
   const groupRef = useRef()
   const smoothProgress = useRef(0)
+
+  // component mounts once GLTF fully loaded
+  useEffect(() => {
+    loadStore.onReady?.()
+  }, [])
 
   useFrame(() => {
     if (!groupRef.current) return
