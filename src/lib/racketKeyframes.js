@@ -12,6 +12,12 @@ export const RACKET_KEYFRAMES = [
     scale: 0.5,
   },
   {
+    id: 'technology',
+    position: [-1.2, 0, -1],
+    rotation: [4, 3.9, 0.1],
+    scale: 0.8,
+  },
+  {
     id: 'collection',
     position: [2, 0.5, 0],
     rotation: [0, Math.PI / 4, Math.PI / 6],
