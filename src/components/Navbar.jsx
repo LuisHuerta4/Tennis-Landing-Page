@@ -7,6 +7,7 @@ export default function Navbar() {
       <ul className="hidden md:flex gap-8 text-sm font-sub text-muted">
         <li><a href="#hero" className="hover:text-accent transition-colors">Home</a></li>
         <li><a href="#features" className="hover:text-accent transition-colors">Features</a></li>
+        <li><a href="#technology" className="hover:text-accent transition-colors">Technology</a></li>
         <li><a href="#collection" className="hover:text-accent transition-colors">Collection</a></li>
       </ul>
       <button className="px-5 py-2 text-sm font-mono bg-accent text-bg rounded hover:brightness-110 transition">
