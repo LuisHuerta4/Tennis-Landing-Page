@@ -4,12 +4,12 @@ import gsap from 'gsap'
 
 const rackets = [
   {
-    name: 'Blade 100',
-    weight: '300g',
+    name: 'Shift 99',
+    weight: '316g',
     balance: '32 cm',
-    tagline: 'The Feel Racket.',
-    imageBefore: '/images/racket_blade100_before.webp',
-    imageAfter: '/images/racket_blade100_after.webp',
+    tagline: 'Spin Meets Power.',
+    imageBefore: '/images/racket_shift99_before.webp',
+    imageAfter: '/images/racket_shift99_after.webp',
   },
   {
     name: 'Pro Staff One',
@@ -28,12 +28,12 @@ const rackets = [
     imageAfter: '/images/racket_ultra100_after.webp',
   },
   {
-    name: 'Intrigue Sakura',
-    weight: '264g',
+    name: 'Blade 98',
+    weight: '305g',
     balance: '33cm',
-    tagline: 'Flex meets stability.',
-    imageBefore: '/images/racket_sakura_before.webp',
-    imageAfter: '/images/racket_sakura_after.webp',
+    tagline: 'Built for the Bold.',
+    imageBefore: '/images/racket_blade98_before.webp',
+    imageAfter: '/images/racket_blade98_after.webp',
   },
 ]
 
