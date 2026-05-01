@@ -51,6 +51,8 @@ export default function Features() {
   const dotAnchorRefs = useRef([])
 
   useGSAP(() => {
+    if (window.innerWidth < 768) return
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -96,9 +98,9 @@ export default function Features() {
         </h2>
       </div>
 
-      {/* lines */}
+      {/* lines — desktop */}
       <svg
-        className="absolute inset-0 w-full h-full z-20 pointer-events-none"
+        className="hidden md:block absolute inset-0 w-full h-full z-20 pointer-events-none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
@@ -141,12 +143,12 @@ export default function Features() {
         ))}
       </svg>
 
-      {/* cards */}
+      {/* cards — desktop*/}
       {features.map((f, i) => (
         <div
           key={f.label}
           ref={el => cardRefs.current[i] = el}
-          className="absolute z-20 w-72"
+          className="hidden md:block absolute z-20 w-56 lg:w-72"
           style={{
             top: f.box.top,
             bottom: f.box.bottom,
@@ -165,6 +167,26 @@ export default function Features() {
           </div>
         </div>
       ))}
+
+      {/* cards — mobile*/}
+      <div className="md:hidden absolute bottom-6 left-0 right-0 px-4 z-20">
+        <div className="grid grid-cols-2 gap-2">
+          {features.map((f) => (
+            <div
+              key={f.label}
+              className="bg-glass backdrop-blur-md border border-glass-border rounded-lg p-3 hover:border-accent/40 transition-colors"
+            >
+              <div className="flex items-baseline justify-between mb-1 gap-1">
+                <h3 className="text-xs font-heading text-text truncate">{f.label}</h3>
+                <span className="font-mono text-accent text-xs shrink-0">{f.stat}</span>
+              </div>
+              <p className="text-muted text-xs font-sub leading-relaxed">
+                {f.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }

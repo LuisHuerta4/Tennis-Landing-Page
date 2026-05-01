@@ -71,6 +71,7 @@ export default function Technology() {
   const headingRef = useRef()
   const labelRef = useRef()
   const dividerRef = useRef()
+  const gridRef = useRef()
   const cardRefs = useRef([])
   const featureRef = useRef()
 
@@ -107,8 +108,9 @@ export default function Technology() {
       duration: 0.65,
       ease: 'power3.out',
       scrollTrigger: {
-        trigger: dividerRef.current,
+        trigger: gridRef.current,
         start: 'top 70%',
+        end: 'bottom top',
         toggleActions: 'play reverse play reverse',
       },
     })
@@ -152,7 +154,7 @@ export default function Technology() {
         <div ref={dividerRef} className="w-full h-px bg-accent/30 mb-14" />
 
         {/*4 column material grid*/}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
           {materials.map((m, i) => (
             <div
               key={m.name}
