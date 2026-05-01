@@ -15,9 +15,7 @@ An immersive, scroll-driven product landing page for the Wilson tennis racket Pe
 
 ## Description
 
-This landing page showcases the Wilson Blade 98 and Performance Series racket lineup through a cinematic, interactive experience. As users scroll through the page, a 3D tennis racket model animates in real-time — repositioning, rotating, and scaling across each section. Scroll-triggered GSAP animations, a live ticker marquee, animated SVG connector lines, and a detailed product collection make the experience feel like a high-end product campaign.
-
-The project was built to push the boundaries of what a landing page can feel like, combining Three.js 3D rendering with GSAP ScrollTrigger in a single cohesive React application.
+This landing page showcases the Wilson Blade 98 and Performance Series racket lineup through a cinematic, interactive experience. As users scroll through the page, a 3D tennis racket model animates in real-time — repositioning, rotating, and scaling across each section. Scroll-triggered GSAP animations, a live ticker marquee, animated SVG connector lines, and a detailed product collection make the experience feel like a high-end product campaign. The project was built combining Three.js 3D rendering with GSAP ScrollTrigger in a single cohesive React application.
 
 ---
 
@@ -27,25 +25,20 @@ The goal of this project was to:
 
 - Build a visually compelling, production-quality landing page from scratch
 - Integrate a real-time 3D model (`@react-three/fiber`) driven entirely by scroll position
-- Demonstrate mastery of GSAP timeline and ScrollTrigger animations
-- Implement a full design system (typography, color palette, component library) using Tailwind CSS v4
+- Demonstrate understanding of GSAP timeline and ScrollTrigger animations
+- Implement a full design system (typography, color palette, component library) using Tailwind CSS
 - Create a responsive layout that works across mobile, tablet, and desktop
-- Practice bridging separate rendering contexts (DOM vs WebGL canvas) through a shared mutable store
 
 ---
 
 ## Screenshots
 
-> _Screenshots coming soon — add your own below._
-
 | Section | Preview |
 |--------|---------|
-| Hero | _(screenshot)_ |
-| Features | _(screenshot)_ |
-| Ticker | _(screenshot)_ |
-| Technology | _(screenshot)_ |
-| Collection | _(screenshot)_ |
-| Mobile | _(screenshot)_ |
+| Hero |<img src="public\screenshots\preview_home.png" width="auto" height="500">|
+| Features |<img src="public\screenshots\preview_features.png" width="auto" height="500"> |
+| Technology | <img src="public\screenshots\preview_technology.png" width="auto" height="500"> |
+| Collection | <img src="public\screenshots\preview_collection.png" width="auto" height="500"> |
 
 ---
 
@@ -54,7 +47,6 @@ The goal of this project was to:
 - **Animated Loading Screen** — Progress bar fills while the 3D GLTF model loads in the background, then transitions into the hero section
 - **Scroll-Driven 3D Racket** — A fixed WebGL canvas renders a Wilson Blade tennis racket that repositions, rotates, and scales between five distinct keyframe states as the user scrolls
 - **GSAP Hero Animation** — Staggered entrance animations for headlines, geometric decorations, and CTA buttons on page load
-- **SVG Feature Connectors** — Animated SVG lines draw from descriptor cards to the racket model with a glow filter and endpoint dot pop effect
 - **Infinite Ticker Marquee** — Two counter-scrolling rows of brand text using GSAP's infinite repeating timeline
 - **Technology Grid** — Material specs and stats with scroll-triggered staggered card animations
 - **Collection Cards** — Product cards with before/after image hover swaps and slanted accent panels using CSS `clip-path`
@@ -136,7 +128,7 @@ Tennis-Landing-Page/
 | @gsap/react | 2.1 | GSAP React hooks integration |
 | Tailwind CSS | 4.2 | Utility-first styling framework |
 
-For full technical documentation, see [DOCUMENTATION.md](DOCUMENTATION.md).
+For full technical documentation, see [Documentation.md](Documentation/DOCUMENTATION.md).
 
 ---
 
