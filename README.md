@@ -17,6 +17,8 @@ An immersive, scroll-driven product landing page for the Wilson tennis racket Pe
 
 This landing page showcases the Wilson Blade 98 and Performance Series racket lineup through a cinematic, interactive experience. As users scroll through the page, a 3D tennis racket model animates in real-time — repositioning, rotating, and scaling across each section. Scroll-triggered GSAP animations, a live ticker marquee, animated SVG connector lines, and a detailed product collection make the experience feel like a high-end product campaign. The project was built combining Three.js 3D rendering with GSAP ScrollTrigger in a single cohesive React application.
 
+LIVE Site: [Here](https://w-tennis-rackets.vercel.app/)
+
 ---
 
 ## Goal
@@ -30,7 +32,11 @@ The goal of this project was to:
 - Create a responsive layout that works across mobile, tablet, and desktop
 
 ---
+## Demo Video
 
+[Video](https://www.linkedin.com/posts/luis-huerta-859b54332_webdevelopment-react-threejs-ugcPost-7455812018848026624-csCB?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFPR2MUBAdv4W7AvF3iAVztT7Wi0X0Fq-7U)
+
+---
 ## Screenshots
 
 | Section | Preview |
