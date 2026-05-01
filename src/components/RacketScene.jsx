@@ -13,9 +13,22 @@ function RacketModel() {
   const groupRef = useRef()
   const smoothProgress = useRef(0)
 
+  const scaleMultiplier = useRef(1)
+
   // component mounts once GLTF fully loaded
   useEffect(() => {
     loadStore.onReady?.()
+
+    function updateScaleMultiplier() {
+      const w = window.innerWidth
+      if (w < 768) scaleMultiplier.current = 0.65
+      else if (w < 1024) scaleMultiplier.current = 0.8
+      else scaleMultiplier.current = 1
+    }
+
+    updateScaleMultiplier()
+    window.addEventListener('resize', updateScaleMultiplier)
+    return () => window.removeEventListener('resize', updateScaleMultiplier)
   }, [])
 
   useFrame(() => {
@@ -46,7 +59,7 @@ function RacketModel() {
     groupRef.current.rotation.z = THREE.MathUtils.lerp(from.rotation[2], to.rotation[2], t)
 
     // scale
-    const s = THREE.MathUtils.lerp(from.scale, to.scale, t)
+    const s = THREE.MathUtils.lerp(from.scale, to.scale, t) * scaleMultiplier.current
     groupRef.current.scale.setScalar(s)
   })
 
